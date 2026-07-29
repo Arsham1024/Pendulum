@@ -1,5 +1,5 @@
 var pivot;
-var len = 180;
+var len = 300;
 
 var angle = PI / 4;   // start swung out 45 degrees
 var angleV = 0;       // angular velocity
@@ -7,8 +7,8 @@ var gravity = 0.4;    // swing strength
 var damping = 0.999;  // slight energy loss so it eases over time
 
 function setup(){
-   createCanvas(540, 360);
-   pivot = createVector(width / 2, 60);
+   createCanvas(800, 600);
+   pivot = createVector(width / 2, 80);
 }
 
 function draw(){
@@ -27,7 +27,8 @@ function pendulum(angle){
    var ballY = pivot.y + len * cos(angle);
 
    stroke(0);
+   strokeWeight(2);
    line(pivot.x, pivot.y, ballX, ballY);
    fill(0);
-   ellipse(ballX, ballY, 30, 30);
+   ellipse(ballX, ballY, 44, 44);
 }

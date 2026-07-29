@@ -1,14 +1,15 @@
 var pivot;
-var len = 300;
+var len = 200;
 
-var angle = PI / 4;   // start swung out 45 degrees
+var angle;            // set in setup() — PI isn't defined until p5 loads
 var angleV = 0;       // angular velocity
 var gravity = 0.4;    // swing strength
 var damping = 0.999;  // slight energy loss so it eases over time
 
 function setup(){
    createCanvas(800, 600);
-   pivot = createVector(width / 2, 80);
+   pivot = createVector(width / 2, height / 2);
+   angle = PI / 4;    // start swung out 45 degrees
 }
 
 function draw(){
@@ -30,5 +31,6 @@ function pendulum(angle){
    strokeWeight(2);
    line(pivot.x, pivot.y, ballX, ballY);
    fill(0);
-   ellipse(ballX, ballY, 44, 44);
+   ellipse(pivot.x, pivot.y, 10, 10);   // pin at the center
+   ellipse(ballX, ballY, 44, 44);       // weight at the end
 }

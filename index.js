@@ -1,5 +1,5 @@
 var origin;
-var angle;
+var len;
 
 function setup(){
    createCanvas(540, 360);
@@ -9,12 +9,11 @@ function setup(){
 
 function draw(){
    background(200);
-   angle = PI/4;
-   pendalum(angle);
+   pendulum(PI/4);
 }
 
 
-function pendalum(angle){
+function pendulum(angle){
    stroke(0);
    var ballX = (origin.x + len) * sin(angle);
    var ballY = (origin.y + len) * cos(angle);
